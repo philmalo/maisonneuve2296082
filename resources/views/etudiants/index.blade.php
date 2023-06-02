@@ -21,7 +21,7 @@
             <td>{{$etudiant->nom}}</td>
             <td><a href="{{ route('etudiants.show', $etudiant->id) }}" class="btn btn-info">Détail</a></td>
             <td><a href="{{ route('etudiants.edit', $etudiant->id) }}" class="btn btn-success">Modifier</a></td>
-            <td><a href="#" class="btn btn-danger delete-btn" data-etudiant-id="{{ $etudiant->id }}" data-etudiant-nom="{{ $etudiant->nom }}">Supprimer</a></td>
+            <td><a href="#" class="btn btn-danger delete-btn"data-etudiant-nom="{{ $etudiant->nom }}" data-etudiant-url="{{ route('etudiants.delete', $etudiant->id) }}">Supprimer</a></td>
             @include('modals.modal', ['etudiant' => $etudiant->nom])
         </tr>
 

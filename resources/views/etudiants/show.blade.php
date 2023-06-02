@@ -6,11 +6,12 @@
 <nav>
     <a href="{{ route('etudiants.index') }}" class="mb-3 btn btn-primary btn-sm">Revenir en arrière</a>
 </nav>
-<div class="student-card">
-    <div class="student-card-header">
-        <h2 class="student-name">{{ $etudiant->nom }}</h2>
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">{{ $etudiant->nom }}</h2>
     </div>
-    <div class="student-card-body">
+    <div class="card-body">
         <p><strong>Adresse :</strong> {{ $etudiant->adresse }}</p>
         <p><strong>Téléphone :</strong> {{ $etudiant->telephone }}</p>
         <p><strong>Courriel :</strong> {{ $etudiant->courriel }}</p>
@@ -18,10 +19,11 @@
         <p><strong>Ville :</strong> {{ $etudiant->etudiantHasVille->nom }}</p>
     </div>
     <div>
-    <a href="{{ route('etudiants.edit', $etudiant->id) }}" class="btn btn-success">Modifier</a>
-    <a href="#" class="btn btn-danger delete-btn" data-etudiant-id="{{ $etudiant->id }}" data-etudiant-nom="{{ $etudiant->nom }}">Supprimer</a>
+    <a href="{{ route('etudiants.edit', $etudiant->id) }}" class="btn btn-primary">Modifier</a>
+    <a href="#" class="btn btn-danger delete-btn"data-etudiant-nom="{{ $etudiant->nom }}" data-etudiant-url="{{ route('etudiants.delete', $etudiant->id) }}">Supprimer</a>
     </div>
 </div>
+
 
 @include('modals.modal', ['etudiant' => $etudiant->nom])
 @endsection

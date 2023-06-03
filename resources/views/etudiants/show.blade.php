@@ -25,5 +25,5 @@
 </div>
 
 
-@include('modals.modal', ['etudiant' => $etudiant->nom])
+@include('modals.modal')
 @endsection
